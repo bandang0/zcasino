@@ -8,10 +8,10 @@ The `zcasino` game is a CLI roulette game. The command does not take any argumen
 
 ### Installing and usage
 
-To install to `home` dir:  
-`cd`
-`git clone https://github.com/bandang0/zcasino`
-`cd zcasino`
+To install to `home` dir:
+* `cd`  
+* `git clone https://github.com/bandang0/zcasino`
+* `cd zcasino`
 
 And to play, just run `./zcasino` from the repo root.
 
