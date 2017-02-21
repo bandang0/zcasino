@@ -1,4 +1,4 @@
-# ZCasino program main
+"""Main module for the zcasino program."""
 
 from random import randrange
 from math import ceil

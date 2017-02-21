@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Entrance point for the zcasino game.
+
+# Source files.
+MAIN=src/zcasino.py
+CORE=src/core.py
+
+# Run if files exist.
+if [ -f $MAIN -a -f $CORE ]
+  then
+    python src/zcasino.py
+else
+  echo -e "Looks like there are some files missing..."
+  echo -e "Try re-cloning the zcasino repo and starting over."
+  echo -e "See the README.md file for details on this operation."
+fi

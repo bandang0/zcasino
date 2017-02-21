@@ -1,4 +1,4 @@
-# ZCasino program functions
+"""Core functions module for the zcasino program."""
 
 def welcome():
     print """
