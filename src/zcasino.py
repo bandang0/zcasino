@@ -2,41 +2,38 @@
 
 from random import randrange
 from math import ceil
-from core import *
+import core
 
-welcome()
-tellRules()
-init_money = askMoney()  # initial amount (when you get to the casino)
-start()
+print core.welcome
+print core.rules
+init_money = core.askMoney()  # initial amount (when you get to the casino)
+print core.start
 money = init_money
 
-
 while True:
-    bet = askBet(money)  # how much do you bet?
+    bet = core.askBet(money)  # how much do you bet?
     money = money - bet
-    choice = askChoice()    # on what do you bet?
+    choice = core.askChoice()    # on what do you bet?
     outcome = randrange(50) # random number
 
     if choice == outcome :  # right number
-        sameNumber(bet)
+        print core.sameNumber % bet
         money = ceil(money + 4*bet)
     elif (choice - outcome) % 2 == 0 :  # right color
-        sameColor(bet)
+        print core.sameColor % bet
         money = ceil(money + 1.5*bet)
     else :                          # all wrong
-        noGain(bet)
+        print core.noGain % bet
 
     if money <= 0 : # if no more money then bye!
-        noMoreMoney()
+        print core.noMoreMoney
         money = 0
         break
 
-    tellState(money)    # how much you have
-    exit = askExit()
+    print core.tellState % money    # how much you have
+    exit = core.askExit()
 
     if exit == True :  # exit or no
         break
 
-
-goodbye(init_money,money)
-#exit(0)
+core.goodbye(init_money, money)

@@ -1,13 +1,26 @@
 """Core functions module for the zcasino program."""
 
-def welcome():
-    print """
+#Provides:
+#   welcome
+#   rules
+#   start
+#   askMoney
+#   askBet
+#   askChoice
+#   sameNumber
+#   sameColor
+#   noGain
+#   noMoreMoney
+#   tellState
+#   askExit
+#   goodbye
+
+welcome = """
     Welcome to the Z Casino, where you can make a fortune by playing
     the roulette!
     """
 
-def tellRules():
-    print """
+rules = """
         The rules here are simple. You'll choose an initial amount of money
     to play with, then at each turn you'll bet a certain amount
     of money and choose a number between 1 and 50, even numbers are red
@@ -18,8 +31,7 @@ def tellRules():
     the colors are different and you'll loose your bet.
     """
 
-def start():
-    print "Alright let's get random!"
+start = "Alright let's get random!"
 
 def askMoney(): # initial amount (when you get to the casino)
     print "So how much money do you want to play with?"
@@ -29,13 +41,11 @@ def askMoney(): # initial amount (when you get to the casino)
         ans = raw_input()
         try :
             money = int(ans)
-        except ValueError :
-
+        except ValueError:
             money = -1
             continue
 
     return money
-
 
 def askBet(money):  # how much do you bet?
     print "\nHow much do you want to bet this time?"
@@ -68,32 +78,26 @@ def askChoice():
 
     return choice - 1
 
-def sameNumber(bet):
-    print "Congrats you got the same number!"
-    print "You get your bet back (it's %d$) plus 2 times!" % bet
+sameNumber = "Congrats you got the same number!\nYou get your bet back"\
+            +" (it's %d$) plus 2 times!"
 
 
-def sameColor(bet):
-    print "Nice you got the same color!"
-    print "You get your bet back (it's %d$) plus one half!" % bet
+sameColor = "Nice you got the same color!\nYou get your bet back (it's %d$)"\
+            +" plus one half!"
 
-def noGain(bet):
-    print "Sorry man, wrong color and wrong number."
-    print "You lost your bet of %d$." % bet
+noGain = "Sorry man, wrong color and wrong number.\nYou lost your bet of %d$."
 
-def noMoreMoney():
-    print "Sorry my friend, looks like you're bankrupt,",
-    print "come back some other time!"
+noMoreMoney = "Sorry my friend, looks like you're bankrupt, "\
+                +"come back some other time!"
 
-def tellState(money):
-    print "You currently have %d$." % money
+tellState = "You currently have %d$."
 
 def askExit():
     print "Would you like to continue playing?",
     ans = raw_input()
     if ans == '' or ans[0] == 'y' or ans[0] == 'Y':
         return False
-    else :
+    else:
         return True
 
 def goodbye(init_money,money):
